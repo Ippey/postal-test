@@ -6,10 +6,12 @@
     <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
         $(function() {
+            start = $.now();
             console.log($.now());
             var target = '#news';
             var csvList;
             var insert = '';
+            var end;
             $.ajax({
                 url: './KEN_ALL.CSV',
                 beforeSend : function(xhr) {
@@ -23,7 +25,9 @@
                             console.log(rows[i]);
                         }
                     }
+                    end = $.now();
                     console.log($.now());
+                    console.log(end - start);
                 }
             });
         });    </script>
